@@ -1,0 +1,35 @@
+--- Platform/Linux/CreateRedist/install.sh.orig	2012-05-24 15:35:24.000000000 -0300
++++ Platform/Linux/CreateRedist/install.sh	2012-12-09 23:23:37.000000000 -0400
+@@ -73,13 +73,13 @@
+ 	exit 1
+ fi
+ 
+-INSTALL_LIB=$rootfs/usr/lib
+-INSTALL_BIN=$rootfs/usr/bin
+-INSTALL_ETC=$rootfs/usr/etc/primesense
+-INSTALL_RULES=$rootfs/etc/udev/rules.d
+-SERVER_LOGS_DIR=$rootfs/var/log/primesense/XnSensorServer
++INSTALL_LIB=$rootfs@PREFIX@/lib
++INSTALL_BIN=$rootfs@PREFIX@/bin
++INSTALL_ETC=$rootfs@PREFIX@/etc/primesense
++INSTALL_RULES=$rootfs@PREFIX@/etc/udev/rules.d
++SERVER_LOGS_DIR=$rootfs@PREFIX@/var/log/primesense/XnSensorServer-
+ #--avin mod--
+-MODPROBE_CONF_DIR=$rootfs/etc/modprobe.d
++MODPROBE_CONF_DIR=$rootfs@PREFIX@/etc/modprobe.d
+ 
+ # make all calls into OpenNI run in this filesystem
+ export OPEN_NI_INSTALL_PATH=$rootfs
+@@ -105,12 +105,6 @@
+     cp $BIN_FILES $INSTALL_BIN
+     printf "OK\n"
+ 
+-    # register modules
+-    for module in $MODULES; do
+-        printf "registering module '$module' with OpenNI..."
+-		$INSTALL_BIN/niReg -r $INSTALL_LIB/$module $INSTALL_ETC
+-        printf "OK\n"
+-    done
+ 
+     # copy config file
+     printf "copying server config file..."
