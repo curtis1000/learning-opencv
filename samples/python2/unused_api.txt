@@ -13,6 +13,10 @@ cv2.FeatureDetector_create
 cv2.FileNode
 cv2.FileStorage
 cv2.GBTrees
+<<<<<<< HEAD
+=======
+cv2.GFTTDetector
+>>>>>>> c6bd5e9cee103cd12a1e3132e1122fb3bfaef6ef
 cv2.GridAdaptedFeatureDetector
 cv2.HOGDescriptor_getDaimlerPeopleDetector
 cv2.HoughCircles
@@ -67,6 +71,10 @@ cv2.compare
 cv2.compareHist
 cv2.completeSymm
 cv2.composeRT
+<<<<<<< HEAD
+=======
+cv2.computeCorrespondEpilines
+>>>>>>> c6bd5e9cee103cd12a1e3132e1122fb3bfaef6ef
 cv2.convertMaps
 cv2.convertPointsFromHomogeneous
 cv2.convertPointsToHomogeneous

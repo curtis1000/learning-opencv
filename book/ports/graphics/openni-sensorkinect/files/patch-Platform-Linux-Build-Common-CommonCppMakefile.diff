@@ -1,0 +1,11 @@
+--- Platform/Linux/Build/Common/CommonCppMakefile.orig	2012-05-24 15:35:24.000000000 -0300
++++ Platform/Linux/Build/Common/CommonCppMakefile	2012-12-09 23:23:37.000000000 -0400
+@@ -82,7 +82,7 @@
+ 	else
+ 		LDFLAGS += -undefined error
+ 		OUTPUT_NAME = lib$(LIB_NAME).dylib
+-		OUTPUT_COMMAND = $(CXX) -o $(OUTPUT_FILE) $(OBJ_FILES) $(LDFLAGS) -dynamiclib -headerpad_max_install_names
++		OUTPUT_COMMAND = $(CXX) -o $(OUTPUT_FILE) $(OBJ_FILES) $(LDFLAGS) -dynamiclib -headerpad_max_install_names -install_name @PREFIX@/lib/$(notdir $(OUTPUT_FILE))
+ 	endif
+ endif
+ ifneq "$(EXE_NAME)" ""
